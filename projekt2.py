@@ -5,15 +5,6 @@ email: martina.volrabova@seznam.cz
 discord: Martina Volrabová Martina Volrabova#!pdb1714
 """
 
-
-
-"""
-projekt_2.py: druhý projekt do Engeto Online Python Akademie
-author: Martina Volrábova
-email: martina.volrabova@seznam.cz
-discord: Martina Svetr#4490
-"""
-
 import random
 
 def random_digit():
