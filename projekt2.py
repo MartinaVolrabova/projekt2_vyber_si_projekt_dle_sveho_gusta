@@ -9,12 +9,18 @@ import random
 
 def random_digit():
     """Generate random 4-digit number with the first digit non-zero and remaining digits can include zero. Range is 0-9"""
+
+    """Possible digits (0-9)"""
     digits = list(range(10))
-    random.shuffle(digits)
-    """ Get random digit from 1 to 9 avoiding 0 as a first digit"""
-    first_digit = digits.pop(digits.index(random.choice(digits[1:]))),
-    """ return first digit with non-zero value and extend it with three random digits"""
-    return [first_digit] + digits[:3]
+    """First digit: 1-9"""
+    first_digit = random.randint(1, 9)
+    """Remove the first value from the list to ensure uniqueness"""
+    digits.remove(first_digit)
+    """Select 3 unique digits from the rest"""
+    remaining_digits = random.sample(digits, 3)
+
+    """join first digit with the other three"""
+    return [first_digit] + remaining_digits
 
 def get_bulls_and_cows(secret, guess):
     """Return the number of Bulls and Cows for the given secret and guess."""
@@ -46,11 +52,12 @@ def play_game():
 
     while True:
         guess = input("Enter a number: ")
+        #print(f"Generated list: {secret_number}")
         attempts += 1
         is_valid, error_message = is_valid_guess(guess)
         if not is_valid:
             print(error_message)
-            continue 
+            continue
 
         guess = [int(digit) for digit in guess]
         bulls, cows = get_bulls_and_cows(secret_number, guess)
@@ -68,3 +75,4 @@ def play_game():
 
 if __name__ == "__main__":
     play_game()
+
