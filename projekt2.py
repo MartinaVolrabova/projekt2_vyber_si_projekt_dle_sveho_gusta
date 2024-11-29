@@ -1,8 +1,8 @@
 """
 projekt_2.py: druhý projekt do Engeto Online Python Akademie
-author: Martina Volrábova
+author: Martina Volrábová
 email: martina.volrabova@seznam.cz
-discord: Martina Volrabová Martina Volrabova#!pdb1714
+discord: Martina Volrábová, Martina Volrabova#!pdb1714
 """
 
 import random
@@ -75,4 +75,3 @@ def play_game():
 
 if __name__ == "__main__":
     play_game()
-
